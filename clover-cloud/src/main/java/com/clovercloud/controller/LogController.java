@@ -54,6 +54,11 @@ public class LogController {
         logRepo.save(log);
     }
 
+    @DeleteMapping(value = "/{id}")
+    public void deleteProject(@PathVariable Integer id){
+        logRepo.deleteById(id);
+    }
+
     @GetMapping(value="/employee/{id}")
     @ResponseStatus(HttpStatus.OK)
     public List<ProjectEmployeeLog> getLogDataByEmployeeId(@PathVariable Integer id) {
